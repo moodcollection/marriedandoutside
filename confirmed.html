@@ -261,67 +261,6 @@
     margin: 28px 0;
   }
 
-  /* ─── What Happens Next Card ─── */
-  .next-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 36px 32px;
-    box-shadow: var(--shadow);
-    margin-bottom: 12px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.6s forwards;
-  }
-
-  .next-card-header {
-    margin-bottom: 24px;
-  }
-  .next-card-header h2 {
-    font-family: var(--font-serif);
-    font-size: 26px;
-    font-weight: 400;
-    margin-bottom: 4px;
-    color: var(--black);
-  }
-  .next-card-header p {
-    font-size: 13px;
-    color: var(--grey);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-
-  .next-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  .next-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    font-size: 14px;
-    line-height: 1.65;
-    color: var(--grey);
-  }
-  .next-list li .check {
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: var(--brown-pale);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1px;
-  }
-  .next-list li .check svg {
-    width: 12px;
-    height: 12px;
-  }
-  .next-list li span {
-    padding-top: 2px;
-  }
 
   /* ─── Submit Button ─── */
   .submit-wrap {
@@ -395,12 +334,6 @@
   }
   #successCard.active { display: block; }
 
-  .success-emoji {
-    font-size: 52px;
-    margin-bottom: 24px;
-    display: block;
-    animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  }
   #successCard h2 {
     font-family: var(--font-serif);
     font-size: 32px;
@@ -460,13 +393,13 @@
 
   /* ─── Responsive ─── */
   @media (max-width: 480px) {
-    .form-section, .next-card { padding: 28px 20px; }
+    .form-section { padding: 28px 20px; }
     .hero { padding: 48px 0 36px; }
     #successCard { padding: 36px 20px; }
   }
   @media (min-width: 768px) {
     .hero { padding: 56px 0 44px; }
-    .form-section, .next-card { padding: 44px 44px; }
+    .form-section { padding: 44px 44px; }
   }
 </style>
 </head>
@@ -485,7 +418,7 @@
 
       <p class="hero-eyebrow">Married &amp; Outside — London</p>
 
-      <h1>You're in</h1>
+      <h1>You're In</h1>
 
       <p class="hero-sub" style="margin-bottom:20px;">Thank you for securing your place at the Married &amp; Outside Couples Link<svg width="18" height="1" viewBox="0 0 18 1" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin:0 2px;"><line x1="0" y1="0.5" x2="18" y2="0.5" stroke="#8B6B4A" stroke-width="0.4"/></svg>Up.</p>
 
@@ -505,27 +438,34 @@
       <p class="section-label">Your details</p>
       <h3 class="section-title">Attendee Registration</h3>
 
-      <!-- Full Name -->
+      <!-- First Name -->
       <div class="field-group">
-        <label for="fullName">Full Name <span class="req">*</span></label>
-        <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
-        <span class="error-msg">Please enter your full name</span>
+        <label for="firstName">First Name <span class="req">*</span></label>
+        <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+        <span class="error-msg">Please enter your first name</span>
       </div>
 
-      <!-- Spouse's Full Name -->
+      <!-- Last Name -->
       <div class="field-group">
-        <label for="spouseFullName">Spouse's Full Name <span class="req">*</span></label>
-        <input type="text" id="spouseFullName" name="spouseFullName" placeholder="Your spouse's full name" required>
-        <span class="error-msg">Please enter your spouse's full name</span>
+        <label for="lastName">Last Name <span class="req">*</span></label>
+        <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+        <span class="error-msg">Please enter your last name</span>
       </div>
 
-      <!-- Email -->
+      <!-- Spouse's First Name -->
       <div class="field-group">
-        <label for="email">Email Address <span class="req">*</span></label>
-        <input type="email" id="email" name="email" placeholder="you@email.com" required>
-        <p class="field-note">Please use the same email address used during payment.</p>
-        <span class="error-msg">Please enter a valid email address</span>
+        <label for="spouseFirstName">Spouse's First Name <span class="req">*</span></label>
+        <input type="text" id="spouseFirstName" name="spouseFirstName" placeholder="Your spouse's first name" required>
+        <span class="error-msg">Please enter your spouse's first name</span>
       </div>
+
+      <!-- Spouse's Last Name -->
+      <div class="field-group">
+        <label for="spouseLastName">Spouse's Last Name <span class="req">*</span></label>
+        <input type="text" id="spouseLastName" name="spouseLastName" placeholder="Your spouse's last name" required>
+        <span class="error-msg">Please enter your spouse's last name</span>
+      </div>
+
 
       <div class="field-sep"></div>
 
@@ -555,51 +495,7 @@
       </div>
     </div>
 
-    <!-- Divider -->
-    <div class="divider"><span>What's next</span></div>
 
-    <!-- What Happens Next Card -->
-    <div class="next-card">
-      <div class="next-card-header">
-        <h2>What Happens Next</h2>
-        <p>Your event timeline</p>
-      </div>
-
-      <ul class="next-list">
-        <li>
-          <span class="check">
-            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 6L5 9L10 3" stroke="#8B6B4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span>Your place has been secured.</span>
-        </li>
-        <li>
-          <span class="check">
-            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 6L5 9L10 3" stroke="#8B6B4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span>We will email all attendees with final event information closer to the event date.</span>
-        </li>
-        <li>
-          <span class="check">
-            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 6L5 9L10 3" stroke="#8B6B4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span>Venue details and reminders will be sent by email.</span>
-        </li>
-        <li>
-          <span class="check">
-            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 6L5 9L10 3" stroke="#8B6B4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span>We can't wait to welcome you and your spouse.</span>
-        </li>
-      </ul>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -615,7 +511,7 @@
   // ─────────────────────────────────────────────────────────────────────────
   // GOOGLE APPS SCRIPT URL — paste your Web App URL here after deploying
   // ─────────────────────────────────────────────────────────────────────────
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyPAwb-M59r46qhj32u_KWIQtAktdQZ_CqzDs--NCFLMoxBfin4yZ0FL2XsifqTq7iz/exec';
+  const APPS_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
   // ─────────────────────────────────────────────────────────────────────────
 
   // Clear error on input
@@ -667,9 +563,10 @@
     var form = document.getElementById('registrationForm');
 
     var payload = {
-      fullName:            form.querySelector('[name="fullName"]').value.trim(),
-      spouseFullName:      form.querySelector('[name="spouseFullName"]').value.trim(),
-      email:               form.querySelector('[name="email"]').value.trim(),
+      firstName:           form.querySelector('[name="firstName"]').value.trim(),
+      lastName:            form.querySelector('[name="lastName"]').value.trim(),
+      spouseFirstName:     form.querySelector('[name="spouseFirstName"]').value.trim(),
+      spouseLastName:      form.querySelector('[name="spouseLastName"]').value.trim(),
       dietaryRequirements: form.querySelector('[name="dietaryRequirements"]').value.trim()
     };
 
