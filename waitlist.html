@@ -678,26 +678,6 @@
         </div>
       </div>
 
-      <div class="field-group">
-        <label>Which area would you like us to host an event? <span class="req">*</span></label>
-        <select name="eventArea" required>
-          <option value="" disabled selected>Select an area</option>
-          <option value="London">London</option>
-          <option value="Hertfordshire">Hertfordshire</option>
-          <option value="Cambridge">Cambridge</option>
-          <option value="Birmingham">Birmingham</option>
-          <option value="Manchester">Manchester</option>
-          <option value="Bristol">Bristol</option>
-          <option value="Leeds">Leeds</option>
-          <option value="Liverpool">Liverpool</option>
-          <option value="Glasgow">Glasgow</option>
-          <option value="Edinburgh">Edinburgh</option>
-          <option value="Cardiff">Cardiff</option>
-          <option value="Other">Other</option>
-        </select>
-        <span class="error-msg">Please select an area</span>
-      </div>
-
       <div class="field-sep"></div>
 
       <!-- Section: About You -->
@@ -849,7 +829,6 @@
       tiktok:       form.querySelector('[name="tiktok"]').value,
       city:         form.querySelector('[name="city"]').value,
       country:      form.querySelector('[name="country"]').value,
-      eventArea:    form.querySelector('[name="eventArea"]').value,
       heardFrom:    form.querySelector('[name="heardFrom"]').value,
       hostInterest: hostInterestEl ? hostInterestEl.value : ''
     };
