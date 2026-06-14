@@ -591,6 +591,8 @@
     var success = document.getElementById('successCard');
 
     form.style.display = 'none';
+    document.querySelector('.hero-body').style.display = 'none';
+    document.querySelector('.divider').style.display = 'none';
     success.classList.add('active');
     success.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
