@@ -438,9 +438,42 @@ body::before {
   .location-icon { margin-top: 0; }
   .location-break { display: none; }
 }
+
+/* ── NAV (Christmas theme) ── */
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(110,42,56,0.95);border-bottom:1px solid rgba(242,230,199,0.2);height:60px;display:flex;align-items:center;backdrop-filter:blur(8px);}
+.nav-inner{width:100%;max-width:760px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:center;}
+.nav-links{display:flex;align-items:center;gap:2px;}
+.nav-links a{font-family:'DM Sans',system-ui,sans-serif;font-size:12px;font-weight:400;letter-spacing:0.04em;color:rgba(242,230,199,0.7);text-decoration:none;padding:6px 11px;border-radius:6px;transition:color 0.15s,background 0.15s;white-space:nowrap;}
+.nav-links a:hover{color:var(--brown-pale);background:rgba(242,230,199,0.1);}
+.nav-links a.active{color:var(--brown-light);font-weight:500;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:10px;background:none;border:none;z-index:200;}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--brown-pale);transition:all 0.25s;}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--xmas-bg);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:300;color:var(--brown-pale);text-decoration:none;padding:10px 20px;transition:color 0.15s;}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--brown-light);}
+@media(max-width:600px){.nav-links{display:none;}.hamburger{display:flex;}.nav-inner{justify-content:flex-end;}}
+
 </style>
 </head>
 <body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-links"><a href="/">Home</a><a href="/our-story">Our Story</a><a href="/events" class="active">Events</a><a href="/waitlist">Waitlist</a><a href="/inquiries">Inquiries</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu"><a href="/">Home</a><a href="/our-story">Our Story</a><a href="/events" class="active">Events</a><a href="/waitlist">Waitlist</a><a href="/inquiries">Inquiries</a></div>
+<script>
+var hb=document.getElementById('hamburger'),mm=document.getElementById('mobile-menu');
+hb.addEventListener('click',function(){hb.classList.toggle('open');mm.classList.toggle('open');});
+mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hb.classList.remove('open');mm.classList.remove('open');});});
+</script>
 
 <!-- ═══════════════════════════════════════════
      HERO
